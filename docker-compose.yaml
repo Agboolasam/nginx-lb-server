@@ -1,29 +1,35 @@
-version: "3.8"
-
 services:
   nginx:
     build: ./load_balancer
     image: nginx:latest
     ports:
       - "8080:80"
+    networks:
+      - nginx_net
   app1:
     environment:
       - appName=app1
     build: .
     ports:
       - "3001:3000"
+    networks:
+      - nginx_net
   app2:
     environment:
       - appName=app2
     build: .
     ports:
       - "3002:3000"
+    networks:
+      - nginx_net
   app3:
     environment:
       - appName=app3
     build: .
     ports:
       - "3003:3000"
+    networks:
+      - nginx_net
 networks:
   nginx_net:
     driver: bridge
