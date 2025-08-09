@@ -1,6 +1,6 @@
 services:
   nginx:
-    build: ./load_balancer
+    build: ./load_balancer/
     depends_on:
       - app1
       - app2
