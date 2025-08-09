@@ -1,7 +1,10 @@
 services:
   nginx:
     build: ./load_balancer
-    image: nginx:latest
+    depends_on:
+      - app1
+      - app2
+      - app3
     ports:
       - "8080:80"
     networks:
@@ -10,16 +13,16 @@ services:
     environment:
       - appName=app1
     build: .
-    ports:
-      - "3001:3000"
+    expose:
+      - "3000"
     networks:
       - nginx_net
   app2:
     environment:
       - appName=app2
     build: .
-    ports:
-      - "3002:3000"
+    expose:
+      - "3000"
     networks:
       - nginx_net
   app3:
@@ -27,9 +30,10 @@ services:
       - appName=app3
     build: .
     ports:
-      - "3003:3000"
+      - "3000"
     networks:
       - nginx_net
+
 networks:
   nginx_net:
     driver: bridge
