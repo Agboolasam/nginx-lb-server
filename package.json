@@ -1,0 +1,22 @@
+{
+  "name": "nginx-lb-server",
+  "version": "1.0.0",
+  "description": "nginx-lb-server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agboolasam/nginx-lb-server"
+  },
+  "author": "agboola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Agboolasam/nginx-lb-server/issues"
+  },
+  "homepage": "https://github.com/Agboolasam/nginx-lb-server#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
