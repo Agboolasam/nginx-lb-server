@@ -11,7 +11,7 @@ services:
       - nginx_net
   app1:
     environment:
-      - appName=app1
+      - APP_NAME=app1
     build: .
     expose:
       - "3000"
@@ -19,7 +19,7 @@ services:
       - nginx_net
   app2:
     environment:
-      - appName=app2
+      - APP_NAME=app2
     build: .
     expose:
       - "3000"
@@ -27,7 +27,7 @@ services:
       - nginx_net
   app3:
     environment:
-      - appName=app3
+      - APP_NAME=app3
     build: .
     ports:
       - "3000"

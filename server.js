@@ -7,7 +7,7 @@ const appName = process.env.APP_NAME;
 
 app.use(express.static(path.join(__dirname, "client", "dist")));
 
-app.get("/", (req, res) => {
+app.get("{*splat}", (req, res) => {
   console.log(`Serving from ${appName}`);
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
